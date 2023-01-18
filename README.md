@@ -4,7 +4,11 @@ Accessibility testing is an important part of ensuring that websites are usable 
 This guide outlines how to use Axe Core with Cypress to test websites for accessibility violations according to WCAG 2.2 AA. 
 
 ## Installation 
-Axe Core can be installed with Cypress by using npm. Npm is a package manager for JavaScript, and it can be used to install and manage packages. To install Axe Core with Cypress, the following command should be run in the terminal: 
+Install Cypress, the following command should be run in the terminal: 
+
+``` npm install cypress ``` 
+
+Then install the Axe Core can be installed with Cypress by using npm. Npm is a package manager for JavaScript, and it can be used to install and manage packages. To install Axe Core with Cypress, the following command should be run in the terminal: 
 
 ``` npm install cypress-axe ``` 
 
