@@ -69,12 +69,14 @@ Cypress.Commands.add("excuteAccessibilityTests", () => {
 
 This framework will work by adding the links you would like to test into the Jason file named as “accessibilitiesTestPages.json”. Then by running the following test “accessbilities-framework.ts” you should see a list of violation against WCAG 2.2 AA if any are found, otherwise it will return 0 violation found.
 
-Below is the “accessibilitiesTestPages.json” file in this example we are passing "what-we-do/" for Nimble Approach, Therefore it is https://nimbleapproach.com/what-we-do/ that would be tested for accessbilities violation according to WCAG 2.2 AA
+Below is the “accessibilitiesTestPages.json” file in this example we are passing "what-we-do/" & "/blog/a-day-in-the-life-fahad-darwish/" for Nimble Approach website, Therefore it is https://nimbleapproach.com/what-we-do/ and https://nimbleapproach.com/blog/a-day-in-the-life-fahad-darwish/ that would be tested for accessbilities violation according to WCAG 2.2 AA
 
 ``` 
 [	
 	
-	"/what-we-do/"
+	"/what-we-do/",
+	"/blog/a-day-in-the-life-fahad-darwish/"
+
 	]
 
 ```
