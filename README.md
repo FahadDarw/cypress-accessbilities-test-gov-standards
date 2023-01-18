@@ -68,48 +68,38 @@ Cypress.Commands.add("excuteAccessibilityTests", () => {
 •	continueOnFail - By default, a test will fail if something doesn't meet the minimum stand set. You might not want this in some case so the 'continueOnFail' option has been added. Currently it's set to false (Tests will fail if a violation is found).
 
 This framework will work by adding the links you would like to test into the Jason file named as “accessibilitiesTestPages.json”. Then by running the following test “accessbilities-framework.ts” you should see a list of violation against WCAG 2.2 AA if any are found, otherwise it will return 0 violation found.
+
+Below is the “accessibilitiesTestPages.json” file in this example we are passing "what-we-do/" & "/blog/a-day-in-the-life-fahad-darwish/" for Nimble Approach website, Therefore it is https://nimbleapproach.com/what-we-do/ and https://nimbleapproach.com/blog/a-day-in-the-life-fahad-darwish/ that would be tested for accessbilities violation according to WCAG 2.2 AA
+
 ``` 
-[   
-    
-    "/",
-    "/case",
-    "/case/concern",
-    "/trust",
-    "/case/concern/add",
-    "/case/territory",
-    "/case/details",
-    "/case/1045/management",
-    "/case/1045/management#trust-overview",
-    "/#team-casework",
-    "/case/2/management/concern",
-    "/case/2/management/edit_current_status",
-    "/case/2/management/edit_issue",
-    "/case/2/management/edit_case_aim",
-    "/case/2/management/casehistory"
-    ]
+[	
+	
+	"/what-we-do/",
+	"/blog/a-day-in-the-life-fahad-darwish/"
+
+	]
 
 ```
 Then by running the following test “accessbilities-framework.ts”
 ``` 
 /// <reference types ='Cypress'/>
-import accessibilitiesTestPages from '../../../fixtures/accessibilitiesTestPages.json'
+import accessibilitiesTestPages from '../integration/Accessbilities Tests/accessibilitiesTestPages.json'
 const wcagStandards = [ "wcag22aa"];
 const impactLevel = ["critical", "minor", "moderate", "serious"];
 const continueOnFail = false;
 
-    describe('Check accessibility of the different pages', function () {
-        beforeEach(() => {
-            cy.login();
-        });
+	describe('Check accessibility of the different pages', function () {
+		
         accessibilitiesTestPages.forEach((link) => {
          it('Validate accessibility on different pages', function () {
             let url = Cypress.env('url')
-            cy.visit(url)
-            cy.visit(url+link)
+            cy.visit('https://nimbleapproach.com')
+            cy.visit('https://nimbleapproach.com'+link)
             cy.excuteAccessibilityTests()
             })
         })
     })
+
 ```
 
 ## Conclusion
