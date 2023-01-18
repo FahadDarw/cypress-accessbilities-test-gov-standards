@@ -60,20 +60,17 @@ Cypress.Commands.add("excuteAccessibilityTests", () => {
   );
 });
 ```
+* **WCAG Standards**: You can define which standards you want to test against. For example the Web Content Accessibility Guidelines (WCAG) 2.2 Level AA Conformance or wcag2.2aa for short. A list of these can be found [here](https://dequeuniversity.com/wcag/wcag-2-2-list).
 
-•	wcagStandards - Here you can define which standards you want to test against. For example the Web Content Accessibility Guidelines (WCAG) 2.2 Level AA Conformance or wcag2.2aa for short. A list of these can be found [here](https://dequeuniversity.com/wcag/wcag-2-2-list).
-
-•	impactLevel - This defines the minimum level that will be reported on and can include
-  o	minor
-  o	moderate
-  o	serious
-  o	critical
+* **Impact Level**: This defines the minimum level that will be reported on and can include:
+  * minor
+  * moderate
+  * serious
+  * critical
   
-•	continueOnFail - By default, a test will fail if something doesn't meet the minimum stand set. You might not want this in some case so the 'continueOnFail' option has been added. Currently it's set to false (Tests will fail if a violation is found).
+* **Continue On Fail**: By default, a test will fail if something doesn't meet the minimum stand set. You might not want this in some cases so the 'continueOnFail' option has been added. Currently it's set to false (Tests will fail if a violation is found).
 
-This framework will work by adding the links you would like to test into the Jason file named as “accessibilitiesTestPages.json”. Then by running the following test “accessbilities-framework.ts” you should see a list of violation against WCAG 2.2 AA if any are found, otherwise it will return 0 violation found.
-
-Below is the “accessibilitiesTestPages.json” file in this example we are passing "what-we-do/" & "/blog/a-day-in-the-life-fahad-darwish/" for Nimble Approach website, Therefore it is https://nimbleapproach.com/what-we-do/ and https://nimbleapproach.com/blog/a-day-in-the-life-fahad-darwish/ that would be tested for accessbilities violation according to WCAG 2.2 AA
+This framework works by adding the links you would like to test into the JSON file named `accessibilitiesTestPages.json`. Then by running the test `accessbilities-framework.ts` you should see a list of violations against WCAG 2.2 AA if any are found, otherwise it will return 0 violations found.
 
 ``` 
 [	
