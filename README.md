@@ -113,7 +113,8 @@ As shown in the screenshot below, the first link (https://nimbleapproach.com/wha
 
 ![image](https://user-images.githubusercontent.com/101198418/213083550-4f78fff5-c75a-4480-a72f-56c8882d2d28.png)
 
-While the second link (https://nimbleapproach.com/blog/a-day-in-the-life-fahad-darwish/) revealed a violation. 
+While the second link (https://nimbleapproach.com/blog/a-day-in-the-life-fahad-darwish/) revealed a violation, which is an "-a11y error!target-size on 5 Nodes" highlighted below.
+
 ![image](https://user-images.githubusercontent.com/101198418/213083709-8884bc39-f2d9-40dc-ae82-41fd68bf4612.png)
 
 ![image](https://user-images.githubusercontent.com/101198418/213082951-1c2ab042-1048-483f-b058-765a2839f44d.png)
