@@ -107,9 +107,9 @@ const continueOnFail = false;
 ```
 
 ## Conclusion
-In conclusion, this guide has outlined the created framework using Axe Core with Cypress to test websites for accessibility violations according to WCAG 2.2 AA. This framework will allow developers to quickly and easily test websites for accessibility violations according to the WCAG 2.2 AA standard. 
+In conclusion, this guide has outlined the framework created using Axe Core and Cypress to test websites for accessibility violations according to the WCAG 2.2 AA standard. This framework allows developers to quickly and easily detect violations of the WCAG 2.2 AA standard. 
 
-As shown one violation found in the nimble approach website on the blog section. 
+As shown in the screenshot below, the first link (https://nimbleapproach.com/what-we-do/) passed with zero violations, while the second link (https://nimbleapproach.com/blog/a-day-in-the-life-fahad-darwish/) revealed a violation. 
 
 ![image](https://user-images.githubusercontent.com/101198418/213082951-1c2ab042-1048-483f-b058-765a2839f44d.png)
  
