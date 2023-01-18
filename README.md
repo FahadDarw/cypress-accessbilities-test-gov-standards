@@ -110,8 +110,8 @@ const continueOnFail = false;
 In conclusion, this guide has outlined the created framework using Axe Core with Cypress to test websites for accessibility violations according to WCAG 2.2 AA. This framework will allow developers to quickly and easily test websites for accessibility violations according to the WCAG 2.2 AA standard. 
 
 ## References
-1. Core-Axe (Node Package Manager)
-2. Bradley Reaney, "Nimble Approach"
+1. “Core-Axe (Node Package Manager)"
+2. “Bradley Reaney & Richika Dogra", Nimble Approach
 3. “Accessibility Testing with Cypress, Axe-Core and Pa11y”, SitePoint
 4. “Using Axe-Core to Run Accessibility Tests in Cypress”, Josh Comeau
 5. “Cypress with Axe-Core: Automating Accessibility Testing”, Danube
