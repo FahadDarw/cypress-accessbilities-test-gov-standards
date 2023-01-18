@@ -1,5 +1,5 @@
 # Accessibility Testing with Axe Core and Cypress
-Accessibility testing is an important part of ensuring that websites are usable by everyone, regardless of their ability. The WCAG 2.2 AA standard is the standard for ensuring that websites are accessible to those with disabilities.
+Accessibility testing is an important part of ensuring that websites are usable by everyone, regardless of their ability. The WCAG 2.2 AA standard is the standard for ensuring that websites are accessible to those with disabilities and what it is required by gov.ac.uk
 
 This guide outlines how to use Axe Core with Cypress to test websites for accessibility violations according to WCAG 2.2 AA. 
 
@@ -34,7 +34,7 @@ it('should be accessible', () => {
 The `injectAxe` command is used to inject the Axe Core library into the website. Finally, the `checkA11y` command is used to check for accessibility violations according to the WCAG 2.2 AA standard. 
 
 ## Refactoring 
-The refactored framework has been added a11y and wrapped within a Cypress command called cy.excuteAccessibilityTests(), which will make it easier to test multiple websites for accessibility violations. The command is shown below and explained further.
+The refactored framework has been added a11y and wrapped within a Cypress command called cy.excuteAccessibilityTests(), which will make it easier to test multiple websites for accessibility violations. The command code created is shown below and explained further.
 
 ``` 
 Cypress.Commands.add("excuteAccessibilityTests", () => {
@@ -66,6 +66,49 @@ Cypress.Commands.add("excuteAccessibilityTests", () => {
 •	continueOnFail - By default, a test will fail if something doesn't meet the minimum stand set. You might not want this in some case so the 'continueOnFail' option has been added. Currently it's set to false (Tests will fail if a violation is found).
 
 This framework will work by adding the links you would like to test into the Jason file named as “accessibilitiesTestPages.json”. Then by running the following test “accessbilities-framework.ts” you should see a list of violation against WCAG 2.2 AA if any are found, otherwise it will return 0 violation found.
+``` 
+[   
+    
+    "/",
+    "/case",
+    "/case/concern",
+    "/trust",
+    "/case/concern/add",
+    "/case/territory",
+    "/case/details",
+    "/case/1045/management",
+    "/case/1045/management#trust-overview",
+    "/#team-casework",
+    "/case/2/management/concern",
+    "/case/2/management/edit_current_status",
+    "/case/2/management/edit_issue",
+    "/case/2/management/edit_case_aim",
+    "/case/2/management/casehistory"
+    ]
+
+```
+Then by running the following test “accessbilities-framework.ts”
+``` 
+/// <reference types ='Cypress'/>
+import accessibilitiesTestPages from '../../../fixtures/accessibilitiesTestPages.json'
+const wcagStandards = [ "wcag22aa"];
+const impactLevel = ["critical", "minor", "moderate", "serious"];
+const continueOnFail = false;
+
+    describe('Check accessibility of the different pages', function () {
+        beforeEach(() => {
+            cy.login();
+        });
+        accessibilitiesTestPages.forEach((link) => {
+         it('Validate accessibility on different pages', function () {
+            let url = Cypress.env('url')
+            cy.visit(url)
+            cy.visit(url+link)
+            cy.excuteAccessibilityTests()
+            })
+        })
+    })
+```
 
 ## Conclusion
 In conclusion, this guide has outlined the created framework using Axe Core with Cypress to test websites for accessibility violations according to WCAG 2.2 AA. This framework will allow developers to quickly and easily test websites for accessibility violations according to the WCAG 2.2 AA standard. 
