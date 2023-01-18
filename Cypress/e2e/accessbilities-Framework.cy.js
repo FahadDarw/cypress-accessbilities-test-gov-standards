@@ -1,8 +1,6 @@
 /// <reference types ='Cypress'/>
 import accessibilitiesTestPages from '../integration/Accessbilities Tests/accessibilitiesTestPages.json'
-const wcagStandards = [ "wcag22aa"];
-const impactLevel = ["critical", "minor", "moderate", "serious"];
-const continueOnFail = false;
+
 
 	describe('Check accessibility of the different pages', function () {
 		
