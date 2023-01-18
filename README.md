@@ -113,7 +113,7 @@ While the second link (https://nimbleapproach.com/blog/a-day-in-the-life-fahad-d
 
 ## References
 1. “Core-Axe (Node Package Manager)"
-2. “Bradley Reaney & Richika Dogra", Nimble Approach
+2. “Bradley Reaney, Richika Dogra, Mike Stock", Nimble Approach
 3. “Accessibility Testing with Cypress, Axe-Core and Pa11y”, SitePoint
 4. “Using Axe-Core to Run Accessibility Tests in Cypress”, Josh Comeau
 5. “Cypress with Axe-Core: Automating Accessibility Testing”, Danube
