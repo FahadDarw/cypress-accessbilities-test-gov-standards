@@ -4,7 +4,11 @@ Accessibility testing is an important part of ensuring that websites are usable 
 This guide outlines how to use Axe Core with Cypress to test websites for accessibility violations according to WCAG 2.2 AA. 
 
 ## Installation 
-Axe Core can be installed with Cypress by using npm. Npm is a package manager for JavaScript, and it can be used to install and manage packages. To install Axe Core with Cypress, the following command should be run in the terminal: 
+Install Cypress, the following command should be run in the terminal: 
+
+``` npm install cypress ``` 
+
+Then install the Axe Core can be installed with Cypress by using npm. Npm is a package manager for JavaScript, and it can be used to install and manage packages. To install Axe Core with Cypress, the following command should be run in the terminal: 
 
 ``` npm install cypress-axe ``` 
 
@@ -56,20 +60,17 @@ Cypress.Commands.add("excuteAccessibilityTests", () => {
   );
 });
 ```
+* **WCAG Standards**: You can define which standards you want to test against. For example the Web Content Accessibility Guidelines (WCAG) 2.2 Level AA Conformance or wcag2.2aa for short. A list of these can be found [here](https://dequeuniversity.com/wcag/wcag-2-2-list).
 
-•	wcagStandards - Here you can define which standards you want to test against. For example the Web Content Accessibility Guidelines (WCAG) 2.2 Level AA Conformance or wcag2.2aa for short. A list of these can be found [here](https://dequeuniversity.com/wcag/wcag-2-2-list).
-
-•	impactLevel - This defines the minimum level that will be reported on and can include
-  o	minor
-  o	moderate
-  o	serious
-  o	critical
+* **Impact Level**: This defines the minimum level that will be reported on and can include:
+  * minor
+  * moderate
+  * serious
+  * critical
   
-•	continueOnFail - By default, a test will fail if something doesn't meet the minimum stand set. You might not want this in some case so the 'continueOnFail' option has been added. Currently it's set to false (Tests will fail if a violation is found).
+* **Continue On Fail**: By default, a test will fail if something doesn't meet the minimum stand set. You might not want this in some cases so the 'continueOnFail' option has been added. Currently it's set to false (Tests will fail if a violation is found).
 
-This framework will work by adding the links you would like to test into the Jason file named as “accessibilitiesTestPages.json”. Then by running the following test “accessbilities-framework.ts” you should see a list of violation against WCAG 2.2 AA if any are found, otherwise it will return 0 violation found.
-
-Below is the “accessibilitiesTestPages.json” file in this example we are passing "what-we-do/" & "/blog/a-day-in-the-life-fahad-darwish/" for Nimble Approach website, Therefore it is https://nimbleapproach.com/what-we-do/ and https://nimbleapproach.com/blog/a-day-in-the-life-fahad-darwish/ that would be tested for accessbilities violation according to WCAG 2.2 AA
+This framework works by adding the links you would like to test into the JSON file named `accessibilitiesTestPages.json`. Then by running the test `accessbilities-framework.ts` you should see a list of violations against WCAG 2.2 AA if any are found, otherwise it will return 0 violations found.
 
 ``` 
 [	
@@ -103,11 +104,22 @@ const continueOnFail = false;
 ```
 
 ## Conclusion
-In conclusion, this guide has outlined the created framework using Axe Core with Cypress to test websites for accessibility violations according to WCAG 2.2 AA. This framework will allow developers to quickly and easily test websites for accessibility violations according to the WCAG 2.2 AA standard. 
+In conclusion, this guide has outlined the framework created using Axe Core and Cypress to test websites for accessibility violations according to the WCAG 2.2 AA standard. This framework allows developers to quickly and easily detect violations of the WCAG 2.2 AA standard. 
+
+As shown in the screenshot below, the first link (https://nimbleapproach.com/what-we-do/) passed with zero violations.
+
+![image](https://user-images.githubusercontent.com/101198418/213083550-4f78fff5-c75a-4480-a72f-56c8882d2d28.png)
+
+While the second link (https://nimbleapproach.com/blog/a-day-in-the-life-fahad-darwish/) revealed a violation, which is an "-a11y error!target-size on 5 Nodes" highlighted below.
+
+![image](https://user-images.githubusercontent.com/101198418/213083709-8884bc39-f2d9-40dc-ae82-41fd68bf4612.png)
+
+![image](https://user-images.githubusercontent.com/101198418/213082951-1c2ab042-1048-483f-b058-765a2839f44d.png)
+ 
 
 ## References
-1. Core-Axe (Node Package Manager)
-2. Bradley Reaney, "Nimble Approach"
+1. “Core-Axe (Node Package Manager)"
+2. “Bradley Reaney & Richika Dogra", Nimble Approach
 3. “Accessibility Testing with Cypress, Axe-Core and Pa11y”, SitePoint
 4. “Using Axe-Core to Run Accessibility Tests in Cypress”, Josh Comeau
 5. “Cypress with Axe-Core: Automating Accessibility Testing”, Danube
